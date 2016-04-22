@@ -214,6 +214,7 @@
       this.prev = possiblePrev
     } else {
       this.prev = document.createElement('div');
+      this.prev.className = 'js-slider-prev';
       this.directionNav.appendChild(this.prev);
     }
 
@@ -222,15 +223,16 @@
       this.next = possibleNext
     } else {
       this.next = document.createElement('div');
+      this.next.className = 'js-slider-next';
       this.directionNav.appendChild(this.next);
     }
 
-    this.prev.className = 'js-slider-prev';
     BasicSlider.applyPrefixedStyle(this.prev, 'user-select', 'none');
+    this.prev.style.cursor = "pointer";
     this.prev.addEventListener('click', this.handlePrev = this.handlePrev.bind(this));
 
-    this.next.className = 'js-slider-next';
     BasicSlider.applyPrefixedStyle(this.next, 'user-select', 'none');
+    this.next.style.cursor = "pointer";
     this.next.addEventListener('click', this.handleNext = this.handleNext.bind(this));
   }
 
